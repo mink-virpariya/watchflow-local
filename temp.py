@@ -1,1 +1,1 @@
-"This is an temp file content."
+"This is an temp file content"
