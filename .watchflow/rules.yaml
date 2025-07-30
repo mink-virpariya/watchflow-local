@@ -1,0 +1,9 @@
+rules:
+  - id: file-upload-approval
+    name: File Upload Approval Requied
+    description: Any file upload must need approval from maintainer unless the author is a maintainer
+    enabled: true
+    severity: high
+    event_types: [push]
+    parameters:
+      file_patterns: ["*.py*"]
