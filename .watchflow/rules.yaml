@@ -16,3 +16,14 @@ rules:
     event_types: [deployment]
     parameters:
       restricted_days: [Saturday, Sunday]
+
+  - id: "block-dev-to-main-pr"
+    name: "Block Pull Requests from Development to Main"
+    description: "Prevent pull requests from the development branch into the main branch"
+    enabled: true
+    severity: "high"
+    event_types: ["pull_request"]
+    parameters:
+      branch_pattern:
+        source_branch: "development"
+        target_branch: "main"
