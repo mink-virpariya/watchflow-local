@@ -9,7 +9,18 @@ rules:
       branch_pattern:
         source_branch: [development]
         target_branch: [main]
-  
+
+  - id: large-pr-warning
+    name: Large PR Warning
+    description: Warn about large pull requests
+    enabled: true
+    severity: high
+    event_types: [pull_request]
+    parameters:
+      max_files: 1
+      max_lines: 5
+      message: "This is a large PR. Consider breaking it into smaller changes."
+
   - id: pr-approval-required
     name: PR Approval Required
     description: All pull requests must have a min num of approvals unless the author is a maintainer
